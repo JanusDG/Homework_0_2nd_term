@@ -1,0 +1,62 @@
+{
+    "data": [
+        {
+            "id": 18402438,
+            "title": "portishead",
+            "duration": 1354,
+            "public": true,
+            "is_loved_track": false,
+            "collaborative": false,
+            "nb_tracks": 5,
+            "fans": 0,
+            "link": "https://www.deezer.com/playlist/18402438",
+            "picture": "https://api.deezer.com/playlist/18402438/image",
+            "picture_small": "https://cdns-images.dzcdn.net/images/cover/5cca6e3c2dd802a4500dbfca8a220f66/56x56-000000-80-0-0.jpg",
+            "picture_medium": "https://cdns-images.dzcdn.net/images/cover/5cca6e3c2dd802a4500dbfca8a220f66/250x250-000000-80-0-0.jpg",
+            "picture_big": "https://cdns-images.dzcdn.net/images/cover/5cca6e3c2dd802a4500dbfca8a220f66/500x500-000000-80-0-0.jpg",
+            "picture_xl": "https://cdns-images.dzcdn.net/images/cover/5cca6e3c2dd802a4500dbfca8a220f66/1000x1000-000000-80-0-0.jpg",
+            "checksum": "dcaa7c179c4304b2a5da3c646cdc1461",
+            "tracklist": "https://api.deezer.com/playlist/18402438/tracks",
+            "creation_date": "2013-11-06 19:00:00",
+            "time_add": 10800,
+            "time_mod": 1383764400,
+            "creator": {
+                "id": 5636099,
+                "name": "jmlsgmail",
+                "tracklist": "https://api.deezer.com/user/5636099/flow",
+                "type": "user"
+            },
+            "type": "playlist"
+        },
+        {
+            "id": 3229482746,
+            "title": "Favourite tracks",
+            "duration": 0,
+            "public": true,
+            "is_loved_track": true,
+            "collaborative": false,
+            "nb_tracks": 0,
+            "fans": 0,
+            "link": "https://www.deezer.com/playlist/3229482746",
+            "picture": "https://api.deezer.com/playlist/3229482746/image",
+            "picture_small": "https://cdns-images.dzcdn.net/images/cover/f0604f1104723a8cb0bd1439bc6f6a30/56x56-000000-80-0-0.jpg",
+            "picture_medium": "https://cdns-images.dzcdn.net/images/cover/f0604f1104723a8cb0bd1439bc6f6a30/250x250-000000-80-0-0.jpg",
+            "picture_big": "https://cdns-images.dzcdn.net/images/cover/f0604f1104723a8cb0bd1439bc6f6a30/500x500-000000-80-0-0.jpg",
+            "picture_xl": "https://cdns-images.dzcdn.net/images/cover/f0604f1104723a8cb0bd1439bc6f6a30/1000x1000-000000-80-0-0.jpg",
+            "checksum": "1558473154f5fcd49ca7e3b63a3c9055",
+            "tracklist": "https://api.deezer.com/playlist/3229482746/tracks",
+            "creation_date": "2017-06-09 19:19:49",
+            "time_add": 1497035989,
+            "time_mod": 1556041459,
+            "creator": {
+                "id": 5636099,
+                "name": "jmlsgmail",
+                "tracklist": "https://api.deezer.com/user/5636099/flow",
+                "type": "user"
+            },
+            "type": "playlist"
+        }
+    ],
+    "checksum": "08853698c9cf154b4c534cb6b172d47840cd750bba9870f18aada2478b24840a",
+    "total": 2
+}
