@@ -1,0 +1,37 @@
+
+This part, having a detailed dataset about  
+4,000 songs, using a machiene learning model
+will show you which of the song's stats has 
+correlation with song's popularity.
+
+Now you can choose the mode. Choose 'research mode'
+to make program do what was described above and 
+'user mode' to be able to choose which stats of a song
+will the model learn on and see graphs of dependency 
+between those stats and song's popularity
+
+please enter all songs values that you want to teach
+the model with. You also will see the dependency of
+those values with the rank of a song afterwords
+Enter the values' indexes separated by coma
+
+Now you will see the accuracy of different models,
+that learned on different stats of songs separatedly.
+The higher the accuracy is, the bigger
+correlation between current song stat and its 
+popularity exists.
+
+As you can see the biggest accuracy have those 
+models that learned on the 'number of artist's fans'
+and ' number of album's fans'. The other stats has 
+way smaller accuracy, which means that there are no
+correlation at all, or it is very small.
+
+P.S Generally, the best accuracy this model can 
+achieve is only about 35%. This happens because 
+of pretty small dataset containing only 4,000 songs
+and because the popularity("rank") stat is usually
+quite a big number (up to 1 billion). Even thought,
+you can still see a huge difference between how 
+for example duration influence the song's popularity
+and how number of album's fans influence it.
