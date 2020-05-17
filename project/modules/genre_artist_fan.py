@@ -6,16 +6,13 @@ from modules.dict_usage import in_file, get_data_from_URL
 url = 'https://api.deezer.com/genre'
 
 def get_statistic():
-    """ NoneType -> dict
+    """ () -> (Dictionary)
     Makes requests and finds in received
     files necessary information.
-    After it, creates dictionary about different genres:
-        * name: (number of artists, number of fans)
-        * uses requests:
-            genres(-> id of genre),
-            genre artists(-> number of artists, id of artists),
-            artist(-> number of fans)
-    """
+    Create the statistic and return
+    this statistic in format Dictionary where:
+        * keys: genres
+        * values: list( number of artists, number of fans ) """
 
     data = get_data_from_URL(url)["data"]
     results = Dictionary()
@@ -38,11 +35,12 @@ def get_statistic():
     return results
 
 def visualize_data(data):
-    """ (dict) -> NoneType
-    Visualize this data as two bars:
+    """ (Dictionary) -> NoneType
+    Takes data in the form of a Dictionary
+    and build graphs from this data using matplotlib
+    The view of graphs:
         * x: genres; y: number of artists
-        * x: genres; y: number of fans
-    """
+        * x: genres; y: number of fans """
     style.use("ggplot")
     fig, axs = pyplot.subplots(1, 2, figsize=(20, 10))
 
@@ -57,16 +55,14 @@ def visualize_data(data):
     pyplot.show()
 
 def main():
-    """ NoneType -> NoneType
-    Gets data about different genres:
-        * name: (number of artists, number of fans)
-        * uses requests:
-            genres(-> id of genre),
-            genre artists(-> number of artists, id of artists),
-            artist(-> number of fans)
-    Writes this data in json file
-    Visualize this data with matplotlib
-    """
+    """ () -> ()
+    The main function which:
+        * create data with statistic
+        * write received data in json file
+            'files\\genre_artist_fan.json'
+            and save this file in the folder
+            'files'
+        * visualize data with matplotlib """
     data = get_statistic()
     in_file('files\\genre_artist_fan.json', data)
     visualize_data(data)

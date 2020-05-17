@@ -26,7 +26,8 @@ class Editor:
         self.menu_map["exit"] = self.system_exit
 
     def genre_art_fan_editor(self):
-        """ function for realising the statistic:
+        """ (Editor) -> NoneType
+        function for realising the statistic:
             * Distribution of artists and fans by genre * """
         # genre_art_fan()
         path = 'files' + self.SLESH + 'genre_artist_fan.json'
@@ -36,17 +37,21 @@ class Editor:
         self.system_exit()
 
     def com_genre_editor(self):
-        """ function for realising the statistic:
+        """ (Editor) -> NoneType
+        function for realising the statistic:
             * The most popular words in comments in the same genre *
-            Imortant: method can be realised for a long time.
+            Important: method can be realised for a long time.
             But if json file with statistic for the same genre already
             exist, the function will use this file.
             if you want to update the file, then comment all code
-            before self.system_exit() and uncomment com_genre() """
+            before self.system_exit() and uncomment com_genre().
+            Also you must comment and uncomment the imports.
+            Or you can just delete the old file """
         # com_genre()
         genre, name = choose_genre()
         if isinstance(genre, int):
             name = name.replace(' ', '_')
+            name = name.replace('/', '_')
             try:
                 path = 'files' + self.SLESH + 'comments_genre_' + name + '.json'
                 data = json_to_dict(path)
@@ -64,25 +69,28 @@ class Editor:
         self.system_exit()
 
     def chart_art_editor(self):
-        """ function for realising the statistic:
+        """ (Editor) -> NoneType
+        function for realising the statistic:
             * Numbers of albums and fans for artists of the chart * """
         chart_art()
         self.system_exit()
 
     def chart_alb_editor(self):
-        """ function for realising the statistic:
+        """ (Editor) -> NoneType
+        function for realising the statistic:
             * Distribution of chart albums by genre and fans by albums * """
         chart_alb()
         self.system_exit()
 
     def system_exit(self):
-        """
+        """ (Editor) -> NoneType
         Function for exiting from the system (stop program)
         """
         raise SystemExit()
 
     def menu(self):
-        """ the main function
+        """ (Editor) -> NoneType
+        The main function
         Offer to user to choose one of the command.
         After it, realise command """
         answer = ""

@@ -5,6 +5,13 @@ from modules.dict_usage import in_file, get_data_from_URL
 
 
 def get_statistic():
+    """ () -> (Dictionary)
+    Makes requests and finds in received
+    files necessary information.
+    Create the statistic and return
+    this statistic in format Dictionary where:
+        * keys: string -> (rating place + artist name)
+        * values: list( number of albums, number of fans ) """
     data = get_data_from_URL(
         'https://api.deezer.com/chart/0/artists')['data']
     results = Dictionary()
@@ -19,6 +26,11 @@ def get_statistic():
 
 
 def visualize_data(data):
+    """ (Dictionary) -> NoneType
+    Takes data in the form of a Dictionary
+    and build a graph from this data using matplotlib
+    The view of graph:
+        * x: artists; y: number of albums | number of fans """
     artists = data.keys
     nb_album = [data[i][0] for i in data.keys]
     nb_fan = [data[i][1] for i in data.keys]
@@ -42,6 +54,14 @@ def visualize_data(data):
 
 
 def main():
+    """ () -> ()
+    The main function which:
+        * create data with statistic
+        * write received data in json file
+            'files\\chart_artist.json'
+            and save this file in the folder
+            'files'
+        * visualize data with matplotlib """
     data = get_statistic()
     in_file('files\\chart_artist.json', data)
     visualize_data(data)

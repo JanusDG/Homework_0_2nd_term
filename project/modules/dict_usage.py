@@ -1,14 +1,23 @@
+# This module have auxiliary functions:
+#   * json_to_dict
+#   * get_data_from_URL
+#   * into_atd
+#   * in_file
+
 import json
 import requests
 from modules.dict_atd import Dictionary, Node
 
 def json_to_dict(path):
+    """ (str) -> Dictionary
+    Return Dictionary created of the same json file
+    """
     with open(path, 'r', encoding = 'utf-8') as f:
         result = json.load(f)
     return into_atd(result)
 
 def get_data_from_URL(url):
-    """(str) -> dict
+    """ (str) -> dict
     Function for getting data from URL (DEEZER)
     """
     querystring = {"q": "eminem"}
@@ -24,6 +33,9 @@ def get_data_from_URL(url):
 
 
 def into_atd(py_dict):
+    """ (dict) -> Dictionary
+    Return Dictionary created of python dictionary
+    """
     our_dict = Dictionary()
     for key,value in py_dict.items():
         if isinstance(value, dict):
@@ -36,6 +48,9 @@ def into_atd(py_dict):
     return our_dict
 
 def in_file(path, data):
+    """ (str, Dictionary) -> NoneType
+    Write data in the same file
+    """
     with open(path, "w", encoding= 'utf-8') as f:
         f.write(str(data))
     print('Data is in file', path)

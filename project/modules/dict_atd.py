@@ -1,22 +1,36 @@
 class Node:
+    """ Class For node representation """
     __slots__ = "_data", "_next", "_key"
     def __init__(self, key, data, next_item=None):
+        """ (Node, anyType, anyType, Node/NoneType) -> NoneType
+        Create new Node
+        """
         self._key = key
         self._data = data
         self._next = next_item
 
     def _data_node(self):
+        """ (Node) -> anyType
+        Return the data of Node
+        """
         return self._data
 
     def __str__(self):
+        """ (Node) -> str
+        Return the string representation of Node
+        """
         return f"{self._data}"    
     
 class Dictionary:
+    """ Class for dictionary ADT representation """
     def __init__(self):
+        """ (Dictionary) -> NoneType
+        Create new Dictionary
+        """
         self._head = None
 
     def _add(self, key, value):
-        """
+        """ (Dictionary, anyType, anyType) -> NoneType
         adds item into the
         begginning of the sequence
         """
@@ -30,18 +44,27 @@ class Dictionary:
     
     @property
     def keys(self):
+        """ (Dictionary) -> list
+        property for keys
+        """
         return [item._key for item in self]
     
     @property
     def values(self):
+        """ (Dictionary) -> list
+        property for values
+        """
         return [item._data for item in self]
 
     @property
     def items(self):
+        """ (Dictionary) -> list
+        property for items
+        """
         return [(item._key, item._data) for item in self]
 
     def remove(self):
-        """
+        """ (Dictionary) -> anyType
         removes the first item in a sequence
         """
         if self._head == None:
@@ -51,7 +74,7 @@ class Dictionary:
         return removed 
 
     def __len__(self):
-        """
+        """ (Dictionary) -> int
         returns the lenght of multiset
         """
         i = 0
@@ -70,9 +93,9 @@ class Dictionary:
         return i
 
     def __eq__(self, other):
-        """
+        """ (Dictionary, Dictionary) -> bool
         the eq() method
-        if self and other are Multisets 
+        if self and other is Dictionary 
         with the same values returns True
         else - False
         """
@@ -94,7 +117,8 @@ class Dictionary:
         return True
 
     def __iter__(self):
-        """ enables iteration in multiset
+        """ (Dictionary) -> Dictionary
+        enables iteration in multiset
         the exapmle of iter() was taken from 
         https://www.programiz.com/python-programming/iterator
         """
@@ -115,11 +139,17 @@ class Dictionary:
             raise StopIteration
 
     def __getitem__(self, key):
+        """ (Dictionary, anyType) -> anyType
+        Return the value for this key
+        """
         for item in self:
             if item._key == key:
                 return item._data_node()
 
     def __setitem__(self, key, value):
+        """ (Dictionary, anyType, anyType) -> NoneType
+        Set the value for this key
+        """
         if key not in self.keys:
             self._add(key,value)
         else:
@@ -128,6 +158,9 @@ class Dictionary:
                     item._data = value
 
     def __str__(self):
+        """ (Dictionary) -> str
+        Return the string representation of Dictionary
+        """
         rez = "{"
         for item in self:
             key_str = value_str = ''
